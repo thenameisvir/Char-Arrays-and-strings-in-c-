@@ -1,0 +1,28 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+int main() {
+  string str = "jwtucoucmdfwxxqnxzkaxoglszmfrcvjoiunqqausaxxaaijyqdqgvdnqcaihwilqkpivenpnekioyqujrdrovqrlxovcucjqzjsxmllfgndfprctxvxwlzjtciqxgsxfwhmuzqvlksyuztoetyjugmswfjtawwaqmwyxmvo";
+  
+  string ptr = "abcdefghijklmnopqrstuvwxyz";
+
+  for(int i = 0; i < str.length(); i++) {
+    for(int j = 0; j < ptr.length(); j++) {
+      if(str[i] == ptr[j]) {
+        ptr.erase(ptr.begin() + j);  
+        break;
+      }
+    }
+  }
+
+  if(ptr.empty()) {
+    cout << "Anagram" << endl;
+  } else {
+    cout << "Not an anagram" << endl;
+  }
+
+  // cout << "Remaining characters in ptr: " << ptr << endl;
+
+  return 0;
+}
